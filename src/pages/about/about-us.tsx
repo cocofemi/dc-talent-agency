@@ -9,73 +9,174 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
+import BrandMainArea from "@/components/brand/brand-main-area";
+import BigText from "@/components/big-text";
 import FooterTwo from "@/layouts/footers/footer-two";
-import AboutUsHero from "@/components/about/about-us-hero";
-import AboutUsArea from "@/components/about/about-us-area";
-import TeamOne from "@/components/team/team-one";
-import FunFactOne from "@/components/fun-fact/fun-fact-one";
-import BrandFive from "@/components/brand/brand-five";
-import AwardOne from "@/components/award/award-one";
 // animation
-import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-animation";
+import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { hoverBtn } from "@/utils/hover-btn";
-import { teamMarqueAnim } from "@/utils/scroll-marque";
+import { brandAnimation } from "@/utils/brand-anim";
+import FunFactOne from "@/components/fun-fact/fun-fact-one";
+import ServicesArea from "@/components/services/services-area";
+import TeamOne from "@/components/team/team-one";
 
-const AboutUsMain = () => {
+const AboutUs = () => {
   useScrollSmooth();
 
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
       titleAnimation();
-      teamMarqueAnim();
-      fadeAnimation();
       hoverBtn();
+      brandAnimation();
     }, 100);
     return () => clearTimeout(timer);
   });
 
   return (
-    <Wrapper>
+    <Wrapper showBackToTop={false}>
       {/* header area start */}
-      <HeaderEleven transparent={true} />
+      <HeaderEleven />
       {/* header area end */}
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main>
-            {/* about hero */}
-            <AboutUsHero />
-            {/* about hero */}
+          <div
+            className="inner-bg"
+            style={{
+              backgroundImage:
+                "url(/assets/img/home-01/team/team-details-bg.png)",
+            }}
+          >
+            <main>
+              {/* brand hero */}
+              <div className="tm-hero-area tm-hero-ptb">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xl-12">
+                      <div className="tm-hero-content">
+                        <span className="tm-hero-subtitle">
+                          DC Talent Agency
+                        </span>
+                        <h4 className="tm-hero-title tp-char-animation">
+                          About us
+                        </h4>
+                      </div>
+                      <div className="tm-hero-text tp_title_anim">
+                        <p>
+                          DC Talent Agency is an international entertainment
+                          agency
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            {/* about area */}
-            <AboutUsArea />
-            {/* about area */}
+              <div className="col-xl-8">
+                <div className="showcase-details-overview-right">
+                  <p className="tp_title_anim">
+                    DC talent agency is an international entertainment agency
+                    representing a diverse range of African creatives, including
+                    actors, models, musicians, and influencers. Our mission is
+                    to connect African talent with global opportunities,
+                    showcasing the richness and diversity of African culture to
+                    the world.
+                  </p>
+                </div>
+              </div>
 
-            {/* team area */}
-            <TeamOne spacing="" />
-            {/* team area */}
+              {/* brand hero */}
 
-            {/* fun fact area */}
-            <FunFactOne />
-            {/* fun fact area */}
+              {/* brand area */}
+              {/* <BrandMainArea /> */}
+              <FunFactOne />
+              {/* brand area */}
 
-            {/* brand area */}
-            <BrandFive />
-            {/* brand area */}
+              <div className="showcase-details-overview-right">
+                <p className="tp_title_anim">
+                  Our clients have amassed over 1 billion digital streams and
+                  have connected with millions of live audiences around the
+                  world. We pride ourselves in crossing borders, connecting
+                  cultures, and maintaining a distinct approach to talent
+                  bookings and management. With this approach, we have built a
+                  track record of discovering and developing award-winning
+                  entertainers globally.
+                </p>
+              </div>
 
-            {/* award area */}
-            <AwardOne cls="ab-award-style pt-120 pb-120" abStyle={true} />
-            {/* award area */}
-          </main>
+              <ServicesArea />
 
-          {/* footer area */}
-          <FooterTwo topCls="" />
-          {/* footer area */}
+              <section className="p-5">
+                <div className="d-flex justify-content-around gap-2 row">
+                  <h4 className="tm-hero-title tp-char-animation">Our Team</h4>
+                  <div className="showcase-details-overview-right">
+                    <p className="tp_title_anim">
+                      Our diverse team of employees and partners operate in
+                      major markets around the world, working tirelessly to
+                      ensure our clients are well-positioned to dominate within
+                      their categories. The pillars of our value system are
+                      transparency, integrity, and dependability. These values
+                      drive our day-to-day interactions with clients, partners,
+                      and other stakeholders in our network.
+                    </p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p>Lorem Ipsem</p>
+                    <p>Founder/Ceo</p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p>Lorem Ipsem</p>
+                    <p>Founder/Ceo</p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p>Lorem Ipsem</p>
+                    <p>Founder/Ceo</p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="p-5">
+                <div className="d-flex justify-content-around row gap-2">
+                  <h4 className="tm-hero-title tp-char-animation">
+                    Contact Us
+                  </h4>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p className="fw-bold fs-2">Location</p>
+                    <p className="fw-bold">
+                      <i className="fa-solid fa-location-dot me-1"></i>Lagos |
+                      London | Nyc | Calgary
+                    </p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p className="fw-bold fs-2">Phone Number</p>
+                    <p>
+                      <i className="fa-solid fa-phone me-1"></i>+447377756301
+                    </p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p className="fw-bold fs-2">Email</p>
+                    <p>
+                      <i className="fa-solid fa-envelope me-1"></i>
+                      Info@dctalentagency.com
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* big text */}
+              <BigText />
+              {/* big text */}
+            </main>
+
+            {/* footer area */}
+            <FooterTwo topCls="" />
+            {/* footer area */}
+          </div>
         </div>
       </div>
     </Wrapper>
   );
 };
 
-export default AboutUsMain;
+export default AboutUs;

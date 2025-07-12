@@ -26,7 +26,7 @@ const ContactMain = () => {
   });
 
   return (
-    <Wrapper>
+    <Wrapper showBackToTop={false}>
       {/* header area start */}
       <HeaderEleven />
       {/* header area end */}
@@ -47,7 +47,9 @@ const ContactMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Lagos Labs</span>
+                        <span className="tm-hero-subtitle">
+                          Dc Talent Agency
+                        </span>
                         <h4 className="tm-hero-title-big tp-char-animation">
                           Get in touch
                         </h4>
@@ -59,16 +61,16 @@ const ContactMain = () => {
               {/* hero area end */}
 
               {/* contact area */}
-              <ContactTwo/>
+              <ContactTwo />
               {/* contact area */}
 
               {/* contact location */}
-              <ContactLocation/>
+              {/* <ContactLocation /> */}
               {/* contact location */}
             </main>
 
             {/* footer area */}
-            <FooterTwo topCls="" whiteFooter={true} />
+            <FooterTwo topCls="" whiteFooter={false} />
             {/* footer area */}
           </div>
         </div>

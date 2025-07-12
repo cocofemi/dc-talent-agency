@@ -5,23 +5,23 @@ const social_data = [
   {
     id: 1,
     icon: <Linkdin />,
-    link: "https://www.linkedin.com/company/lagos-labs/",
+    link: "https://www.linkedin.com/company/dc-talent-agency/",
   },
   {
     id: 2,
     icon: <Twitter />,
-    link: "https://twitter.com/lagoslabs",
+    link: "https://twitter.com/DCTAgency",
   },
   {
     id: 3,
     icon: <Instagram />,
-    link: "https://www.instagram.com/lagoslabs",
+    link: "https://www.instagram.com/dctalent/?hl=en",
   },
-  {
-    id: 4,
-    icon: <Youtube />,
-    link: "https://www.youtube.com/@LagosLabs",
-  },
+  // {
+  //   id: 4,
+  //   icon: <Youtube />,
+  //   link: "https://www.youtube.com/@LagosLabs",
+  // },
 ];
 
 export default function Social() {

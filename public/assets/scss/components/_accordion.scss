@@ -88,6 +88,14 @@
         }
     }
 }
+/* In your global CSS (e.g. styles/globals.css or a CSS module) */
+.accordion-collapse.collapse {
+  visibility: visible;
+}
+.accordion-collapse.collapse.show {
+  visibility: visible;
+}
+
 .tp-service-2-accordion-box{
     @media #{$md,$xs}{
         margin-bottom: 60px;

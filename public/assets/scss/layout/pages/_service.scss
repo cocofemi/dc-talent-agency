@@ -760,7 +760,7 @@
     }
 }
 .sv-big-text{
-    font-size: 199px;
+    font-size: 95px;
     font-weight: 700;
     line-height: .9;
     letter-spacing: -12px;
@@ -770,23 +770,29 @@
     margin-bottom: 0;
     transform: translateX(-12px);
     @media #{$xxl}{
-        font-size: 182px;
+        font-size: 95px;
     }
     @media #{$xl}{
-        font-size: 151px;
+        font-size: 95px;
     }
     @media #{$lg}{
-        font-size: 129px;
+        font-size: 72px;
+        letter-spacing: -9px;
+        white-space: break-spaces;
     }
     @media #{$md}{
-        font-size: 101px;
+        font-size: 72px;
+        letter-spacing: -9px;
+        white-space: break-spaces;
     }
     @media #{$xs}{
         font-size: 84px;
+        letter-spacing: -9px;
         white-space: break-spaces;
     }
     @media #{$sm}{
         font-size: 80px;
+        letter-spacing: -9px;
         white-space: nowrap;
     }
 }

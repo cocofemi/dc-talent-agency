@@ -11,12 +11,12 @@ interface WrapperProps {
   showBackToTop?: boolean;
 }
 
-const Wrapper = ({ children, showBackToTop=true }: WrapperProps) => {
+const Wrapper = ({ children, showBackToTop = true }: WrapperProps) => {
   return (
     <React.Fragment>
       {children}
       {showBackToTop && <BackToTop />}
-      <ThemeSetting />
+      {/* <ThemeSetting /> */}
     </React.Fragment>
   );
 };

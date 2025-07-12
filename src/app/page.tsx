@@ -1,14 +1,14 @@
 import { Metadata } from "next";
-import HomeOnePage from "./(homes)/home-1/page";
+import HomePage from "./(home)/home/page";
 
 export const metadata: Metadata = {
-  title: "Lagos Labs - Home Page",
+  title: "DC Talent Agency - Home Page",
 };
 
 export default function Home() {
   return (
     <>
-      <HomeOnePage />
+      <HomePage />
     </>
   );
 }

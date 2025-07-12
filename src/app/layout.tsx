@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./globals.css";
 import {
   Syne,
   Aladin,
@@ -8,6 +9,8 @@ import {
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
+import ChatBot from "@/components/chatbot/ChatBot";
+import { ChatbotProvider } from "../../context/chatbot-context";
 
 const gellery = localFont({
   src: [
@@ -67,8 +70,9 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
-  title: "Lagos Labs - A Phygital Creative Agency & Blockhain as a Service Consultant",
-  description: "Design. Deploy. Scale. Where Blockchain Inspires Innovation",
+  title: "DC Talent Agency is an international entertainment agency",
+  description:
+    "An international entertainment agency representing a diverse range of African creatives",
 };
 
 export default function RootLayout({
@@ -83,7 +87,10 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
       >
-        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
+        <ChatbotProvider>
+          <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
+          <ChatBot />
+        </ChatbotProvider>
       </body>
     </html>
   );

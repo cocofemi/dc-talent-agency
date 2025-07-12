@@ -12,11 +12,13 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import PortfolioDetailsShowcaseArea from "@/components/portfolio/details/portfolio-details-showcase-area";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
-import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-animation";
-
+import {
+  charAnimation,
+  fadeAnimation,
+  titleAnimation,
+} from "@/utils/title-animation";
 
 const PortfolioDetailsShowcaseMain = () => {
-
   useScrollSmooth();
 
   useGSAP(() => {
@@ -38,7 +40,7 @@ const PortfolioDetailsShowcaseMain = () => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <PortfolioDetailsShowcaseArea/>
+            <PortfolioDetailsShowcaseArea />
             {/* portfolio details area */}
           </main>
 

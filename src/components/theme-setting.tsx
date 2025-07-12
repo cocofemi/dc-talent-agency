@@ -1,17 +1,17 @@
-'use client';
+"use client";
 import React from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 
-const  ThemeSetting = () => {
+const ThemeSetting = () => {
   const { setTheme, theme } = useTheme();
   const [settingOpen, setSettingOpen] = React.useState(false);
 
-  console.log('theme', theme);
+  console.log("theme", theme);
 
   function handleOpenSetting() {
     setSettingOpen(!settingOpen);
-  };
+  }
   return (
     <div
       className={`tp-theme-settings-area transition-3 ${
@@ -29,9 +29,14 @@ const  ThemeSetting = () => {
               onClick={() => setTheme("dark")}
               className={`tp-theme-dir-rtl ${theme === "dark" ? "active" : ""}`}
             >
-              Dark
+              <i className="fa-solid fa-moon"></i>
             </span>
-            <input type="checkbox" id="tp-dir-toggler" checked={theme === "dark"} readOnly />
+            <input
+              type="checkbox"
+              id="tp-dir-toggler"
+              checked={theme === "dark"}
+              readOnly
+            />
             <i className="tp-theme-dir-slide"></i>
             <span
               onClick={() => setTheme("light")}
@@ -39,7 +44,7 @@ const  ThemeSetting = () => {
                 theme === "light" ? "active" : ""
               }`}
             >
-              Light
+              <i className="fa-solid fa-sun"></i>
             </span>
           </label>
         </div>
@@ -67,5 +72,5 @@ const  ThemeSetting = () => {
 };
 
 export default dynamic(() => Promise.resolve(ThemeSetting), {
-  ssr: false
-})
+  ssr: false,
+});

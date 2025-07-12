@@ -1,15 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
-import AboutUsMain from "@/pages/about/about-us";
+import AboutUs from "@/pages/about/about-us";
 
 export const metadata: Metadata = {
-  title: "Lagos Labs - About us page",
+  title: "Dc Talent Agency - About us",
 };
 
 const AboutUsPage = () => {
-  return (
-    <AboutUsMain/>
-  );
+  return <AboutUs />;
 };
 
 export default AboutUsPage;

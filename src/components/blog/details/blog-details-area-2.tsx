@@ -13,7 +13,7 @@ import details_thumb_3 from "@/assets/img/inner-blog/blog-details/blog-details-4
 
 export default function BlogDetailsAreaTwo() {
   return (
-    <section className="postbox__area tp-blog-sidebar-sticky-area pt-120 pb-120">
+    <section className="postbox__area tp-blog-sidebar-sticky-area pt-40">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
@@ -61,7 +61,7 @@ export default function BlogDetailsAreaTwo() {
                 </div>
               </div>
               <div className="blog-details-thumb-box tp_fade_bottom">
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-md-6">
                     <div className="blog-details-thumb">
                       <Image
@@ -82,7 +82,7 @@ export default function BlogDetailsAreaTwo() {
                       />
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="row justify-content-center">
                 <div className="col-xl-8">
@@ -123,7 +123,7 @@ export default function BlogDetailsAreaTwo() {
                   </div>
                 </div>
               </div>
-              <div className="blog-details-thumb-box">
+              {/* <div className="blog-details-thumb-box">
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="blog-details-thumb">
@@ -136,10 +136,10 @@ export default function BlogDetailsAreaTwo() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="row justify-content-center">
                 <div className="col-xl-8">
-                  <div className="blog-details-left-content tp_fade_bottom">
+                  {/* <div className="blog-details-left-content tp_fade_bottom">
                     <h4 className="blog-details-left-title">
                       What is Lorem Ipsum?
                     </h4>
@@ -155,8 +155,8 @@ export default function BlogDetailsAreaTwo() {
                       into electronic typesetting, remaining essentially
                       unchanged
                     </p>
-                  </div>
-                  <div className="blog-details-share-wrap mb-40">
+                  </div> */}
+                  {/* <div className="blog-details-share-wrap mb-40">
                     <div className="row">
                       <div className="col-xl-8">
                         <div className="blog-details-tag">
@@ -177,30 +177,30 @@ export default function BlogDetailsAreaTwo() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   {/* blog details author */}
-                  <BlogDetailsAuthor />
+                  {/* <BlogDetailsAuthor /> */}
                   {/* blog details author */}
 
                   {/* blog details navigation */}
-                  <BlogDetailsNavigation />
+                  {/* <BlogDetailsNavigation /> */}
                   {/* blog details navigation */}
                   <div className="postbox__comment mb-100">
-                    <h3 className="postbox__comment-title">3 Comments</h3>
+                    {/* <h3 className="postbox__comment-title">3 Comments</h3> */}
                     {/* blog details comments */}
-                    <BlogDetailsComments />
+                    {/* <BlogDetailsComments /> */}
                     {/* blog details comments */}
                   </div>
                   <div className="tp-postbox-details-form">
-                    <h3 className="tp-postbox-details-form-title">
+                    {/* <h3 className="tp-postbox-details-form-title">
                       Leave a Reply
                     </h3>
                     <p>
                       Your email address will not be published. Required fields
                       are marked *
-                    </p>
+                    </p> */}
                     {/* blog reply form */}
-                    <BlogReplyForm />
+                    {/* <BlogReplyForm /> */}
                     {/* blog reply form */}
                   </div>
                 </div>

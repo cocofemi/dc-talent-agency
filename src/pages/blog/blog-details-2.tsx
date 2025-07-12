@@ -17,8 +17,14 @@ import { charAnimation } from "@/utils/title-animation";
 import BlogDetailsAreaTwo from "@/components/blog/details/blog-details-area-2";
 // image
 import blog_bg from "@/assets/img/inner-blog/blog-details-without-sidebar/blog-details-3.jpg";
+import { IArticleDT } from "@/types/blog-d-t";
 
-const BlogDetailsTwoMain = () => {
+type IProps = {
+  articleData?: IArticleDT;
+};
+
+const BlogDetailsTwoMain = ({ articleData }: IProps) => {
+  console.log(articleData);
   useScrollSmooth();
 
   useGSAP(() => {
@@ -29,7 +35,7 @@ const BlogDetailsTwoMain = () => {
   });
 
   return (
-    <Wrapper>
+    <Wrapper showBackToTop={false}>
       {/* header area start */}
       <HeaderEleven />
       {/* header area end */}
@@ -39,17 +45,18 @@ const BlogDetailsTwoMain = () => {
           <main>
             {/* blog details hero */}
             <div className="blog-details-area blog-details-without-sidebar">
-              <div className="blog-details-without-sidebar p-relative d-flex align-items-end pt-170 pb-70">
+              <div className="blog-details-without-sidebar p-relative d-flex align-items-end pt-170">
                 <div className="container">
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="blog-details-content z-index-5">
                         <span className="blog-details-meta text-black">
-                          Creative
+                          {articleData?.category}
                         </span>
                         <h4 className="blog-details-title tp-text-black tp-char-animation">
-                          Taking Your <br /> brand in the Metaverse
+                          {articleData?.title}
                         </h4>
+                        <p>{articleData?.date.toString()}</p>
                       </div>
                     </div>
                   </div>
@@ -58,29 +65,12 @@ const BlogDetailsTwoMain = () => {
               <div className="container container-1800">
                 <div className="blog-details-thumb-wrap">
                   <div className="row">
-                    <div className="col-md-4">
-                      <div className="blog-details-top-meta text-center">
-                        <span>Mark Hopkins</span>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="blog-details-top-meta text-center">
-                        <span>01 October, 2022</span>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="blog-details-top-meta text-center">
-                        <span>7 mins</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
                     <div className="col-xl-12">
                       <div className="blog-details-thumb">
-                        <Image
-                          className="w-100"
+                        <img
+                          className=""
                           data-speed=".8"
-                          src={blog_bg}
+                          src={articleData?.cover || blog_bg.src}
                           alt="blog_bg"
                           style={{ height: "auto" }}
                         />
@@ -90,15 +80,34 @@ const BlogDetailsTwoMain = () => {
                 </div>
               </div>
             </div>
+
+            <section className="postbox__area tp-blog-sidebar-sticky-area pt-40">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-12">
+                    <div className="postbox__wrapper">
+                      <div className="row justify-content-center">
+                        <div className="col-xl-8">
+                          <div className="blog-details-top-text tp_fade_bottom">
+                            <article
+                              className="article"
+                              dangerouslySetInnerHTML={{
+                                __html: articleData?.contentHtml || "",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
             {/* blog details hero */}
 
             {/* blog details area */}
-            <BlogDetailsAreaTwo />
+            {/* <BlogDetailsAreaTwo /> */}
             {/* blog details area */}
-
-            {/* related posts */}
-            <BlogDetailsRelatedPosts />
-            {/* related posts */}
           </main>
 
           {/* footer area */}

@@ -98,15 +98,18 @@ export default function PortfolioGridColTwoArea() {
           {portfolio_data.map((item) => (
             <div
               key={item.id}
-              className={`col-xl-6 col-lg-6 col-md-6 grid-item ${item.show}`}
+              className={`col-xl-3 col-lg-6 col-md-6 grid-item ${item.show}`}
             >
-              <div className="tp-project-5-2-thumb anim-zoomin-wrap mb-30 not-hide-cursor p-relative" data-cursor="View<br>Demo">
+              <div
+                className="tp-project-5-2-thumb anim-zoomin-wrap mb-30 not-hide-cursor p-relative"
+                data-cursor="View<br>Demo"
+              >
                 <Link href="/portfolio-details-1" className="cursor-hide">
                   <Image
                     className="anim-zoomin"
                     src={item.img}
                     alt="port-img"
-                    style={{ height: "auto" }}
+                    style={{ height: "400px" }}
                   />
                   <div className="tp-project-5-2-category tp_fade_anim">
                     <span>{item.category}</span>

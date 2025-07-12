@@ -818,6 +818,9 @@
         & .blog-details-top-text p {
             color: var(--tp-common-white);
         }
+        & .blog-details-top-text h1,h2, h3, h4, ul, li {
+            color: var(--tp-common-white);
+        }
         & .blog-details-left-title {
             color: var(--tp-common-white);
         }
@@ -2175,8 +2178,7 @@
             & svg{
                 color: var(--tp-common-white);
             }
-        }
-    
+        }    
     
     }
     

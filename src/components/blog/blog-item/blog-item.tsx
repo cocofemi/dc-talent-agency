@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { IBlogDT } from "@/types/blog-d-t";
+import { IArticleDT } from "@/types/blog-d-t";
 import Link from "next/link";
 
-export default function BlogItem({ item }: { item: IBlogDT }) {
+export default function BlogItem({ item }: { item: IArticleDT }) {
   return (
     <div className="tp-blog-item">
       <div className="tp-blog-thumb fix p-relative">
-        <Image src={item.img!} alt="blog-img" style={{ height: "auto" }} />
+        <img src={item.cover!} alt="blog-img" style={{ height: "300px" }} />
         <div className="tp-blog-meta">
           <span>{item.date}</span>
         </div>
@@ -15,7 +15,7 @@ export default function BlogItem({ item }: { item: IBlogDT }) {
       <div className="tp-blog-content">
         <span>{item.category}</span>
         <h4 className="tp-blog-title-sm">
-          <Link href={`/blog-details/${item.id}`}>{item.title}</Link>
+          <Link href={`/blog-detail/${item.id}`}>{item.title}</Link>
         </h4>
       </div>
     </div>

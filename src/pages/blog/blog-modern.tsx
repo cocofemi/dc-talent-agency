@@ -15,7 +15,13 @@ import { charAnimation } from "@/utils/title-animation";
 import BlogModern from "@/components/blog/blog-modern-area";
 import BigText from "@/components/big-text";
 
-const BlogModernMain = () => {
+import { IArticleDT } from "@/types/blog-d-t";
+
+type IProps = {
+  articles?: IArticleDT[];
+};
+
+const BlogModernMain = ({ articles }: IProps) => {
   useScrollSmooth();
 
   useGSAP(() => {
@@ -26,7 +32,7 @@ const BlogModernMain = () => {
   });
 
   return (
-    <Wrapper>
+    <Wrapper showBackToTop={false}>
       {/* header area start */}
       <HeaderEleven />
       {/* header area end */}
@@ -35,7 +41,7 @@ const BlogModernMain = () => {
         <div id="smooth-content">
           <main>
             {/* blog modern area start */}
-            <BlogModern />
+            <BlogModern articles={articles} />
             {/* blog modern area end */}
 
             {/* big text area */}

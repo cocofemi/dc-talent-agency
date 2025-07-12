@@ -1,13 +1,26 @@
 import React from "react";
 import Image from "next/image";
-import { Behance, CloseTwo, Dribble, Facebook, Instagram, InstagramTwo, Linkdin, Twitter, Youtube } from "../svg";
+import {
+  Behance,
+  CloseTwo,
+  Dribble,
+  Facebook,
+  Instagram,
+  InstagramTwo,
+  Linkdin,
+  Twitter,
+  Youtube,
+} from "../svg";
 
 // images
 import logo from "@/assets/img/logo/logo.png";
-import gallery_1 from "@/assets/img/menu/offcanvas/offcanvas-1.jpg";
-import gallery_2 from "@/assets/img/menu/offcanvas/offcanvas-2.jpg";
-import gallery_3 from "@/assets/img/menu/offcanvas/offcanvas-3.jpg";
-import gallery_4 from "@/assets/img/menu/offcanvas/offcanvas-4.jpg";
+import logo_3 from "@/assets/img/logo/dc-logo_2.jpeg";
+import logo_2 from "@/assets/img/logo/dc-logo.jpeg";
+
+import gallery_1 from "@/assets/img/roster/pheelz.avif";
+import gallery_2 from "@/assets/img/roster/txc.avif";
+import gallery_3 from "@/assets/img/roster/kahlo.avif";
+import gallery_4 from "@/assets/img/roster/uncle_waffles.avif";
 import MobileMenus from "./mobile-menus";
 
 const gallery_images = [gallery_1, gallery_2, gallery_3, gallery_4];
@@ -18,7 +31,10 @@ type IProps = {
   setOpenOffcanvas: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps) {
+export default function MobileOffcanvas({
+  openOffcanvas,
+  setOpenOffcanvas,
+}: IProps) {
   return (
     <>
       <div className={`tp-offcanvas-area ${openOffcanvas ? "opened" : ""}`}>
@@ -26,7 +42,7 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
           <div className="tp-offcanvas-top d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo">
               <a href="#">
-                <Image src={logo} alt="logo" />
+                <Image src={logo_3} alt="logo" className="!w-[120px]" />
               </a>
             </div>
             <div className="tp-offcanvas-close">
@@ -40,11 +56,13 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
           </div>
           <div className="tp-offcanvas-main">
             <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title">Welcome to Lagos Labs!</h3>
-              <p>Where blockchain inspires innovation, </p>
+              <h3 className="tp-offcanvas-title">
+                Welcome to DC Talent Agency
+              </h3>
+              <p>The future of african creatives </p>
             </div>
             <div className="tp-main-menu-mobile d-xl-none">
-              <MobileMenus/>
+              <MobileMenus />
             </div>
             <div className="tp-offcanvas-gallery">
               <div className="row gx-2">
@@ -64,13 +82,13 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
 
               <ul>
                 <li>
-                  <a href="tel:1245654">+1 773 809 7774</a>
+                  <a href="tel:1245654">+447377756301</a>
                 </li>
                 <li>
-                  <a href="hello@lagoslabs.dev">hello@lagoslabs.dev</a>
+                  <a href="hello@lagoslabs.dev">info@dctalentagency.com</a>
                 </li>
                 <li>
-                  <a href="#">2000 S Michigan Ave Ste 1C, Chicago, IL 60616</a>
+                  <a href="#">Lagos | London | Nyc | Calgary</a>
                 </li>
               </ul>
             </div>
@@ -78,16 +96,20 @@ export default function MobileOffcanvas({openOffcanvas,setOpenOffcanvas}: IProps
               <h3 className="tp-offcanvas-title sm">Follow Us</h3>
               <ul>
                 <li>
-                  <a href="https://www.linkedin.com/company/lagos-labs"><Linkdin /></a>
+                  <a href="https://www.linkedin.com/company/dc-talent-agency/">
+                    <Linkdin />
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/lagoslabs"><Instagram /></a>
+                  <a href="https://www.instagram.com/dctalent/?hl=en">
+                    <Instagram />
+                  </a>
                 </li>
                 <li>
-                  <a href="https://www.twitter.com/lagoslabs"> <Twitter /></a>
-                </li>
-                <li>
-                  <a href="https://www.youtube.com/@LagosLabs"><Youtube /></a>
+                  <a href="https://twitter.com/DCTAgency">
+                    {" "}
+                    <Twitter />
+                  </a>
                 </li>
               </ul>
             </div>

@@ -17,3 +17,12 @@ export interface IBlogDT {
   blogHeroSlider?: boolean;
   desc?: string;
 }
+
+export interface IArticleDT {
+  id: string;
+  category: string;
+  title?: string;
+  date: string;
+  cover?: string;
+  contentHtml?: string;
+}

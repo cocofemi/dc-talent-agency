@@ -16,6 +16,9 @@ import FooterTwo from "@/layouts/footers/footer-two";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import { hoverBtn } from "@/utils/hover-btn";
 import { brandAnimation } from "@/utils/brand-anim";
+import FunFactOne from "@/components/fun-fact/fun-fact-one";
+import ServicesArea from "@/components/services/services-area";
+import TeamOne from "@/components/team/team-one";
 
 const BrandMain = () => {
   useScrollSmooth();
@@ -52,9 +55,11 @@ const BrandMain = () => {
                   <div className="row">
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
-                        <span className="tm-hero-subtitle">Liko Studio</span>
+                        <span className="tm-hero-subtitle">
+                          DC Talent Agency
+                        </span>
                         <h4 className="tm-hero-title tp-char-animation">
-                          Our Sponsors
+                          About us
                         </h4>
                       </div>
                       <div className="tm-hero-text tp_title_anim">
@@ -70,11 +75,60 @@ const BrandMain = () => {
               {/* brand hero */}
 
               {/* brand area */}
-              <BrandMainArea/>
+              {/* <BrandMainArea /> */}
+              <FunFactOne />
               {/* brand area */}
 
+              <ServicesArea />
+
+              <section className="p-5">
+                <div className="d-flex justify-content-around gap-2 row">
+                  <h4 className="tm-hero-title tp-char-animation">Our Team</h4>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p>Lorem Ipsem</p>
+                    <p>Founder/Ceo</p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p>Lorem Ipsem</p>
+                    <p>Founder/Ceo</p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p>Lorem Ipsem</p>
+                    <p>Founder/Ceo</p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="p-5">
+                <div className="d-flex justify-content-around row gap-2">
+                  <h4 className="tm-hero-title tp-char-animation">
+                    Contact Us
+                  </h4>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p className="fw-bold fs-2">Location</p>
+                    <p className="fw-bold">
+                      <i className="fa-solid fa-location-dot me-1"></i>Lagos |
+                      London | Nyc | Calgary
+                    </p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p className="fw-bold fs-2">Phone Number</p>
+                    <p>
+                      <i className="fa-solid fa-phone me-1"></i>+447377756301
+                    </p>
+                  </div>
+                  <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
+                    <p className="fw-bold fs-2">Email</p>
+                    <p>
+                      <i className="fa-solid fa-envelope me-1"></i>
+                      Info@dctalentagency.com
+                    </p>
+                  </div>
+                </div>
+              </section>
+
               {/* big text */}
-              <BigText/>
+              <BigText />
               {/* big text */}
             </main>
 
