@@ -10,7 +10,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
 import ChatBot from "@/components/chatbot/ChatBot";
-import { ChatbotProvider } from "../../context/chatbot-context";
+import { ChatbotProvider } from "../components/context/chatbot-context";
 
 const gellery = localFont({
   src: [
@@ -87,10 +87,12 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
       >
-        <ChatbotProvider>
-          <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
-          <ChatBot />
-        </ChatbotProvider>
+        <ThemeProvider defaultTheme="light">
+          <ChatbotProvider>
+            {children}
+            <ChatBot />
+          </ChatbotProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

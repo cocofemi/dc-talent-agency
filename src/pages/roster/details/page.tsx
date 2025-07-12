@@ -1,4 +1,5 @@
 "use client";
+
 import { gsap } from "gsap";
 import React from "react";
 import Image from "next/image";
@@ -18,16 +19,17 @@ import FooterTwo from "@/layouts/footers/footer-two";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 
 import roster_data from "@/data/roster";
-import { useChatbot } from "../../../../context/chatbot-context";
+import { useChatbot } from "../../../components/context/chatbot-context";
 
 // images
 import port_d_1 from "@/assets/img/inner-project/portfolio-details/port-details-1.jpg";
 import BigText from "@/components/big-text";
 
-const port_images = [port_d_1];
+// const port_images = [port_d_1];
 
 const RosterDetails = () => {
-  const { setShowChatbot } = useChatbot();
+  const chatbotContext = useChatbot();
+  const setShowChatbot = chatbotContext?.setShowChatbot;
   const searchParams = useSearchParams();
 
   const id = searchParams?.get("id");
@@ -221,8 +223,8 @@ const RosterDetails = () => {
                               className="tp-btn-white background-black mt-20"
                               href="#"
                               onClick={(e) => {
-                                e.preventDefault();
-                                setShowChatbot(true);
+                                setShowChatbot?.(true);
+                                // setShowChatbot(true);
                               }}
                             >
                               {item?.category === "Creator"

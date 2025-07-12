@@ -1,31 +1,38 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import ChatbotIcon from "./ChatbotIcon";
 import ChatMessage from "./ChatMessage";
 import ChatForm from "./ChatForm";
 import { IChatMessageType } from "@/types/chatbot-d-t";
-import { useChatbot } from "../../../context/chatbot-context";
+import { useChatbot } from "../context/chatbot-context";
 
 function ChatBot() {
-  const { showChatbot, setShowChatbot } = useChatbot();
-  const [chatHistory, setChatHistory] = useState(() => {
-    const stored = localStorage.getItem("chatbotChatHistory");
+  const chatbotContext = useChatbot();
+  const showChatbot = chatbotContext?.showChatbot ?? false;
+  const setShowChatbot = chatbotContext?.setShowChatbot ?? (() => {});
+  const [chatHistory, setChatHistory] = useState<any[]>([]);
+
+  useEffect(() => {
     try {
-      return stored
-        ? JSON.parse(stored)
-        : [
-            {
-              role: "model",
-              text: `Hi there! 👋\n
-                    Welcome to DC Talent Agency.
-                    To get started booking any of our artists, please answer the following questions. Thanks \n
-                    Which of our artist would you like to book?`,
-            },
-          ];
-    } catch {
-      return [];
+      const stored = localStorage.getItem("chatbotChatHistory");
+      if (stored) {
+        setChatHistory(JSON.parse(stored));
+      } else {
+        setChatHistory([
+          {
+            role: "model",
+            text: `Hi there! 👋\n
+Welcome to DC Talent Agency.
+To get started booking any of our artists, please answer the following questions. Thanks \n
+Which of our artist would you like to book?`,
+          },
+        ]);
+      }
+    } catch (err) {
+      setChatHistory([]);
     }
-  });
+  }, chatHistory);
   const [sessionId, setSessionId] = useState<string | null>(null);
   // const [showChatbot, setShowChatbot] = useState(false);
 
@@ -49,9 +56,9 @@ function ChatBot() {
     }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("chatbotChatHistory", JSON.stringify(chatHistory));
-  }, [chatHistory]);
+  // useEffect(() => {
+  //   localStorage.setItem("chatbotChatHistory", JSON.stringify(chatHistory));
+  // }, [chatHistory]);
 
   const generateBotResponse = async (history: any) => {
     const updateHistory = (text: string, fileUrl = false, isError = false) => {

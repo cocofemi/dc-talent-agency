@@ -15,5 +15,4 @@ export interface TicketInfo {
     name: string;
     price: string;
     quantity: string;
-    ref: React.RefObject<HTMLDivElement>;
 }

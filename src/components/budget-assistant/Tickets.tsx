@@ -81,7 +81,9 @@ function Tickets({ nextStep, prevStep }: IProps) {
         {fields.map((ticket, index) => (
           <div
             key={index}
-            ref={(el) => (ticketRefs.current[index] = el)}
+            ref={(el) => {
+              ticketRefs.current[index] = el;
+            }}
             className="grid grid-cols-2 gap-4 mb-6 border-b pb-4 "
           >
             <div>

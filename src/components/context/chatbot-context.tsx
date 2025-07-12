@@ -19,7 +19,7 @@ export const ChatbotProvider = ({ children }: { children: ReactNode }) => {
 
 export const useChatbot = () => {
   const context = useContext(ChatbotContext);
-  if (!context)
+  if (!context && typeof window !== "undefined")
     throw new Error("useChatbot must be used inside ChatbotProvider");
   return context;
 };

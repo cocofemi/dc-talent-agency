@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
+
 import { Metadata } from "next";
 import RosterDetails from "@/pages/roster/details/page";
 
@@ -7,7 +8,11 @@ export const metadata: Metadata = {
 };
 
 const Roster = () => {
-  return <RosterDetails />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RosterDetails />
+    </Suspense>
+  );
 };
 
 export default Roster;
