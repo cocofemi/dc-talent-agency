@@ -20,6 +20,7 @@ export default function MainHomeDetails() {
         <div>
           <div className="video-container">
             <video
+              playsInline
               autoPlay
               muted
               loop
