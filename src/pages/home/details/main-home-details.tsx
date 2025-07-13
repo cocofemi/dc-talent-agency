@@ -34,7 +34,7 @@ export default function MainHomeDetails() {
               Your browser does not support the video tag.
             </video>
             <div className="video-overlay">
-              <h1>DC Talent Agency</h1>
+              {/* <h1>DC Talent Agency</h1> */}
               <h4 className="port-showcase-slider-title tp-char-animation">
                 The Future Of African Creatives
               </h4>
