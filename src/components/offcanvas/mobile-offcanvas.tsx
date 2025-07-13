@@ -14,14 +14,15 @@ import {
 
 // images
 import logo from "@/assets/img/logo/logo.png";
-import logo_3 from "@/assets/img/logo/dc-logo_2.jpeg";
-import logo_2 from "@/assets/img/logo/dc-logo.jpeg";
+import logo_3 from "@/assets/img/logo/dc-logo.jpeg";
+import logo_2 from "@/assets/img/logo/dc-logo copy.jpeg";
 
 import gallery_1 from "@/assets/img/roster/pheelz.avif";
 import gallery_2 from "@/assets/img/roster/txc.avif";
 import gallery_3 from "@/assets/img/roster/kahlo.avif";
 import gallery_4 from "@/assets/img/roster/uncle_waffles.avif";
 import MobileMenus from "./mobile-menus";
+import { useTheme } from "next-themes";
 
 const gallery_images = [gallery_1, gallery_2, gallery_3, gallery_4];
 
@@ -35,6 +36,7 @@ export default function MobileOffcanvas({
   openOffcanvas,
   setOpenOffcanvas,
 }: IProps) {
+  const { setTheme, theme } = useTheme();
   return (
     <>
       <div className={`tp-offcanvas-area ${openOffcanvas ? "opened" : ""}`}>
@@ -42,7 +44,11 @@ export default function MobileOffcanvas({
           <div className="tp-offcanvas-top d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo">
               <a href="#">
-                <Image src={logo_3} alt="logo" className="!w-[120px]" />
+                <Image
+                  src={theme === "dark" ? logo_3 : logo_2}
+                  alt="logo"
+                  className="!w-[120px]"
+                />
               </a>
             </div>
             <div className="tp-offcanvas-close">

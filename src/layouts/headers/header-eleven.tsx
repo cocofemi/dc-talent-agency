@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import HeaderMenus from "./header-menus";
 import useSticky from "@/hooks/use-sticky";
-import logo_3 from "@/assets/img/logo/dc-logo copy.jpeg";
-import logo_2 from "@/assets/img/logo/dc-logo.jpeg";
+import logo_dark from "@/assets/img/logo/dc-logo copy.jpeg";
+import logo_light from "@/assets/img/logo/dc-logo.jpeg";
 import MobileOffcanvas from "@/components/offcanvas/mobile-offcanvas";
 import { useTheme } from "next-themes";
 
@@ -26,6 +26,17 @@ export default function HeaderEleven({
     headerFullWidth();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const getLogo = () => {
+    if (sticky && theme === "light") {
+      return logo_dark;
+    }
+
+    if (transparent) return logo_light;
+    if (sticky && theme === "dark") return logo_light;
+    if (theme === "dark") return logo_light;
+    return logo_dark;
+  };
+
   return (
     <>
       <header className="tp-header-height z-index-5" ref={headerRef}>
@@ -43,35 +54,13 @@ export default function HeaderEleven({
                     className={`${transparent ? "ab-logo-1" : "logo-1"}`}
                     href="/"
                   >
-                    <Image
-                      src={
-                        sticky
-                          ? logo_3
-                          : logo_2
-                          ? theme === "dark"
-                            ? logo_2
-                            : logo_3
-                          : logo_3
-                      }
-                      alt="logo"
-                    />
+                    <Image src={getLogo()} alt="logo" />
                   </Link>
                   <Link
                     className={`${transparent ? "ab-logo-2" : "logo-2"}`}
                     href="/"
                   >
-                    <Image
-                      src={
-                        sticky && theme === "dark"
-                          ? logo_2
-                          : logo_3
-                          ? theme === "dark"
-                            ? logo_2
-                            : logo_3
-                          : logo_3
-                      }
-                      alt="logo"
-                    />
+                    <Image src={getLogo()} alt="logo" />
                   </Link>
                 </div>
               </div>

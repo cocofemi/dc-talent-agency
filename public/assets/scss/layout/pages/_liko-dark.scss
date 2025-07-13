@@ -24,6 +24,8 @@
         & #ball {
             background-color: var(--tp-common-white) !important;
         }
+
+
         
     
         & .tp-line-text-area.black-bg{
@@ -2178,8 +2180,14 @@
             & svg{
                 color: var(--tp-common-white);
             }
-        }    
-    
+        }  
+        .tp-inner-header-area {
+            &.header-sticky {
+                .tp-header-bar button span {
+                    background-color: var(--tp-common-white);
+                }
+            }
+        }
     }
     
 

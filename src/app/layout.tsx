@@ -11,6 +11,8 @@ import { ThemeProvider } from "next-themes";
 import "./globals.scss";
 import ChatBot from "@/components/chatbot/ChatBot";
 import { ChatbotProvider } from "../components/context/chatbot-context";
+import { GoogleTagManager } from "@next/third-parties/google";
+import CookieConsentBanner from "@/components/cookiebanner/page";
 
 const gellery = localFont({
   src: [
@@ -87,9 +89,17 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
       >
+        <GoogleTagManager
+          gtmId={
+            !process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID
+              ? ""
+              : process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID
+          }
+        />
         <ThemeProvider defaultTheme="light">
           <ChatbotProvider>
             {children}
+            <CookieConsentBanner />
             <ChatBot />
           </ChatbotProvider>
         </ThemeProvider>

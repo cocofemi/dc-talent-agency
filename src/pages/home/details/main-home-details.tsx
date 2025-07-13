@@ -19,7 +19,13 @@ export default function MainHomeDetails() {
       <div className="tp-showcase-details-area">
         <div>
           <div className="video-container">
-            <video autoPlay muted loop className="background-video">
+            <video
+              autoPlay
+              muted
+              loop
+              className="background-video"
+              style={{ pointerEvents: "none" }}
+            >
               <source
                 src="https://video.wixstatic.com/video/eb868b_1a0cc7f542df4fd6b4dcbf3209d41dcd/1080p/mp4/file.mp4"
                 type="video/mp4"
