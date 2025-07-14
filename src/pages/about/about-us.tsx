@@ -122,7 +122,7 @@ const AboutUs = () => {
                     </p>
                   </div>
                   <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
-                    <p>Lorem Ipsem</p>
+                    <p>Camillo Doregos</p>
                     <p>Founder/Ceo</p>
                   </div>
                   <div className="col-xl-3 col-sm-12 shadow-sm p-3 mb-5 bg-white rounded">
